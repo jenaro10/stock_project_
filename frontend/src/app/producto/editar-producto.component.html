@@ -1,0 +1,59 @@
+<app-menu></app-menu>
+
+<div class="container" *ngIf="producto">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="producto.name" required
+                        required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripcion</label>
+                    <input type="text" class="form-control" id="description" name="description" [(ngModel)]="producto.description" required
+                        required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="imageURL">ImagenURL</label>
+                    <input type="text" class="form-control" id="imageURL" name="imageURL" [(ngModel)]="producto.imageURL" required
+                        required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="number" class="form-control" id="precio" name="precio" [(ngModel)]="producto.price" required
+                        required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="createdate">Fecha de creacion</label>
+                    <input type="text" class="form-control" id="createdate" name="createdate" [(ngModel)]="producto.creationDate" required
+                        required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="buydate">Fecha de compra</label>
+                    <input type="text" class="form-control" id="buydate" name="buydate" [(ngModel)]="producto.buyDate" required
+                        required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="propertyStatus">Status</label>
+                    <input type="text" class="form-control" id="propertyStatus" name="propertyStatus" [(ngModel)]="producto.propertyStatus" required
+                        required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="locationBelongs">locationBelongs</label>
+                    <input type="text" class="form-control" id="locationBelongs" name="locationBelongs" [(ngModel)]="producto.locationBelongs" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="actualLocation">actualLocation</label>
+                    <input type="text" class="form-control" id="actualLocation" name="actualLocation" [(ngModel)]="producto.actualLocation" required
+                        autocomplete="off">
+                </div>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                    <i class="fas fa-edit"></i> Actualizar</button>
+                <button class="btn btn-outline-primary btn-block mb-2" (click)="volver()"><i
+                        class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </form>
+        </div>
+    </div>
+</div>

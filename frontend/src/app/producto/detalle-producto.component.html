@@ -1,0 +1,111 @@
+<div class="container">
+    <div class="row mt-5" *ngIf="producto">
+        <div class="col-md-4 mx-auto">
+            <div class="card" style="width: 25rem;">
+                <div class="card-header text-center">
+                    Detalle
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>ID: </b>{{producto.property._id}}</li>
+                    <li class="list-group-item"><b>Nombre: </b>{{producto.property.name}}</li>
+                    <li class="list-group-item"><b>Descripcion: </b>{{producto.property.description}}</li>
+                    <li class="list-group-item"><b>URLImagen: </b>{{producto.property.imageURL}}</li>
+                    <li class="list-group-item"><b>Precio: </b>{{producto.property.price}}</li>
+                    <li *ngIf="producto.property.movable && producto.property.movable.electronic?.laptop">
+                        Movable Electronic Laptop:
+                        <ul>
+                            <li>OS: {{ producto.property.movable.electronic.laptop?.OS }}</li>
+                            <li>Brand: {{ producto.property.movable.electronic.brand }}</li>
+                            <li>Color: {{ producto.property.movable.electronic.color }}</li>
+                            <li>Serial Number: {{ producto.property.movable.electronic.serialNumer }}</li>
+                            <li>Usb Ports: {{ producto.property.movable.electronic.usbPorts }}</li>
+                            <li>Wired: {{ producto.property.movable.electronic.wired }}</li>
+                            <li>Resolution Screen: {{ producto.property.movable.electronic.laptop?.resolutionScreen }}</li>
+                            <li>Ram: {{ producto.property.movable.electronic.laptop?.ram }}</li>
+                            <li>Processor: {{ producto.property.movable.electronic.laptop?.processor }}</li>
+                            <li>GPU: {{ producto.property.movable.electronic.laptop?.gpu }}</li>
+                            <li>Hard Drive: {{ producto.property.movable.electronic.laptop?.hardDrive }}</li>
+                        </ul>
+                    </li>
+                    <li *ngIf="producto.property.movable && producto.property.movable.electronic?.tv">
+                        Movable Electronic Tv:
+                        <ul>
+                            <li>Brand: {{ producto.property.movable.electronic.brand }}</li>
+                            <li>Color: {{ producto.property.movable.electronic.color }}</li>
+                            <li>Serial Number: {{ producto.property.movable.electronic.serialNumer }}</li>
+                            <li>Usb Ports: {{ producto.property.movable.electronic.usbPorts }}</li>
+                            <li>Wired: {{ producto.property.movable.electronic.wired }}</li>
+                            <li>Display Resolution: {{ producto.property.movable.electronic.tv?.displayResolution }}</li>
+                            <li>Scren Size: {{ producto.property.movable.electronic.tv?.screenSize }}</li>
+                            <li>Remote Control: {{ producto.property.movable.electronic.tv?.remoteControl }}</li>
+                        </ul>
+                    </li>
+                    <li *ngIf="producto.property.movable && producto.property.movable.electronic?.projector">
+                        Movable Electronic Projector:
+                        <ul>
+                            <li>Brand: {{ producto.property.movable.electronic.brand }}</li>
+                            <li>Color: {{ producto.property.movable.electronic.color }}</li>
+                            <li>Serial Number: {{ producto.property.movable.electronic.serialNumer }}</li>
+                            <li>Usb Ports: {{ producto.property.movable.electronic.usbPorts }}</li>
+                            <li>Wired: {{ producto.property.movable.electronic.wired }}</li>
+                            <li>Display Resolution: {{ producto.property.movable.electronic.projector?.displayResolution }}</li>
+                            <li>Brightness: {{ producto.property.movable.electronic.projector?.brightness }}</li>
+                            <li>Remote Control: {{ producto.property.movable.electronic.projector?.remoteControl }}</li>
+                        </ul>
+                    </li>
+                    <li *ngIf="producto.property.movable && producto.property.movable.furniture">
+                        Movable Furniture Chair:
+                        <ul>
+                            <li>Color: {{ producto.property.movable.furniture.color }}</li>
+                            <li>Cushioning: {{ producto.property.movable.furniture.cushioning }}</li>
+                            <li>Dimensions: {{ producto.property.movable.furniture.dimensions }}</li>
+                            <li>Form: {{ producto.property.movable.furniture.form }}</li>
+                            <li>Legs: {{ producto.property.movable.furniture.legs }}</li>
+                            <li>Material: {{ producto.property.movable.furniture.material }}</li>
+                        </ul>
+                    </li>
+                    <li *ngIf="producto.property.movable && producto.property.movable.vehicle">
+                        Movable Vehicle:
+                        <ul>
+                            <li>Air Condition: {{ producto.property.movable.vehicle.airCondition }}</li>
+                            <li>Color: {{ producto.property.movable.vehicle.color }}</li>
+                            <li>Cushioning: {{ producto.property.movable.vehicle.cushioning }}</li>
+                            <li>Engine: {{ producto.property.movable.vehicle.engine }}</li>
+                            <li>Seats: {{ producto.property.movable.vehicle.seats }}</li>
+                            <li>Wheels: {{ producto.property.movable.vehicle.wheels }}</li>
+                        </ul>
+                    </li>
+                    <li *ngIf="producto.property.nonMovable && producto.property.nonMovable.establishment.building">
+                        Non Movable Establishment building:
+                        <ul>
+                            <li>Doors: {{ producto.property.nonMovable.establishment.building.doors }}</li>
+                            <li>Parking: {{ producto.property.nonMovable.establishment.building.parking }}</li>
+                        </ul>
+                    </li>
+                    <li *ngIf="producto.property.nonMovable && producto.property.nonMovable.establishment.house">
+                        Non Movable Establishment House:
+                        <ul>
+                            <li>Doors: {{ producto.property.nonMovable.establishment.house.doors }}</li>
+                            <li>Pool: {{ producto.property.nonMovable.establishment.house.pool }}</li>
+                            <li>Color: {{ producto.property.nonMovable.establishment.house.color }}</li>
+                            <li>Floors: {{ producto.property.nonMovable.establishment.house.floors }}</li>
+                            <li>Rooms: {{ producto.property.nonMovable.establishment.house.rooms }}</li>
+                            <li>Windows: {{ producto.property.nonMovable.establishment.house.windows }}</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item"><b>Fecha de creacion: </b>{{producto.property.creationDate}}</li>
+                    <li class="list-group-item"><b>Fecha de compra: </b>{{producto.property.buyDate}}</li>
+                    <li class="list-group-item"><b>Status: </b>{{producto.property.propertyStatus}}</li>
+                    <li class="list-group-item"><b>Pertenece: </b>{{producto.property.locationBelongs}}</li>
+                    <li class="list-group-item"><b>Ubicacion actual: </b>{{producto.property.actualLocation}}</li>
+                    <li class="list-group-item"><b>Responsable: </b>{{producto.property.assignedTo}}</li>
+                    
+                </ul>
+                <div class="card-footer">
+                    <button class="btn btn-outline-primary btn-block" (click)="volver()"><i
+                            class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<app-menu></app-menu>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Descripcion</label>
+                    <input type="text" class="form-control" id="description" name="description" [(ngModel)]="descripcion" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Fecha de creacion</label>
+                    <input type="text" class="form-control" id="creationDate" name="creationDate" [(ngModel)]="creationDate" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Fecha de compra</label>
+                    <input type="text" class="form-control" id="buyDate" name="buyDate" [(ngModel)]="buyDate" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">ImagenURL</label>
+                    <input type="text" class="form-control" id="imageURL" name="imageUrl" [(ngModel)]="imageURL" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="number" class="form-control" id="precio" name="precio" [(ngModel)]="precio" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Status</label>
+                    <input type="text" class="form-control" id="status" name="status" [(ngModel)]="status" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">locationBelongs</label>
+                    <input type="text" class="form-control" id="locationBelongs" name="locationBelongs" [(ngModel)]="locationBelongs" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">actualLocation</label>
+                    <input type="text" class="form-control" id="actuallocation" name="actuallocation" [(ngModel)]="actuallocation" required
+                        autocomplete="off">
+                </div>
+                
+                
+                <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                    <i class="far fa-plus-square"></i> Crear</button>
+                <button class="btn btn-outline-primary btn-block mb-2" (click)="volver()"><i
+                        class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </form>
+        </div>
+    </div>
+</div>
